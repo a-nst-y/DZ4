@@ -233,6 +233,15 @@ for k in letters:
             pers_interests.append(0)
             
         Professional_interests[urlnew] = pers_interests
+ #Новости
+mentioned_in_news = {}
+new = treenew.find('div', {"class" : "b-person-data posts printable", 'tab-index' : 'press_links_news'})
+        news = []
+        for n in new.find_all('p', {"class" : "with-indent"}):
+                        new_one = n.text
+                        news.append(new_one)
+        l = len(news)
+mentioned_in_news[urlnew] = l
         
 #вот та самая пресловутая заготовка
         
